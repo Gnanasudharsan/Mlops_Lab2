@@ -27,7 +27,7 @@ cd Mlops_Lab2
 python3 -m venv streamlitenv
 source ./streamlitenv/bin/activate   # Mac/Linux
 # or
-.\streamlitenv\Scriptsctivate      # Windows
+.\streamlitenv\Scripts\activate      # Windows
 ```
 
 ### 3. Install dependencies
@@ -70,7 +70,7 @@ cd Mlops_Lab2
 source ./streamlitenv/bin/activate
 export API_KEY="your_api_key_here"
 export ML_WINE_PATH="data/winequality-red.csv"
-uvicorn api.main:app --reload --port 8000
+uvicorn src.api.main:app --reload --port 8000
 ```
 Backend will be available at [http://localhost:8000](http://localhost:8000).
 
