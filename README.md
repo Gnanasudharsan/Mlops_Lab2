@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Mlops_Lab2
 =======
 # MLOps Lab 2 – FastAPI + Streamlit
