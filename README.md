@@ -1,7 +1,7 @@
 
 # Mlops_Lab2
 =======
-# MLOps Lab 2 – FastAPI + Streamlit
+# MLOps Lab 2 – Streamlit
 
 This lab demonstrates how to serve a machine learning model with **FastAPI** and build an interactive **Streamlit** dashboard for predictions and exploratory data analysis (EDA).  
 The project covers:
@@ -11,24 +11,6 @@ The project covers:
 - Integrating Streamlit as a frontend dashboard  
 - Supporting CSV/JSON uploads for batch predictions  
 - Visualizing results with Plotly  
-
----
-
-## Project Structure
-
-```
-Mlops_Lab2/
-│── api/
-│   └── main.py          # FastAPI backend (ML inference service)
-│── src/
-│   └── Dashboard.py     # Streamlit frontend (UI + EDA + predictions)
-│── data/
-│   └── winequality-red.csv   # Wine Quality dataset (semicolon separated)
-│── requirements.txt
-│── README.md
-│── .streamlit/
-│    └── secrets.toml    # API key and backend URL config
-```
 
 ---
 
