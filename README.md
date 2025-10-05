@@ -1,6 +1,6 @@
 
 # Mlops_Lab2
-=======
+
 # MLOps Lab 2 – Streamlit
 
 This lab demonstrates how to serve a machine learning model with **FastAPI** and build an interactive **Streamlit** dashboard for predictions and exploratory data analysis (EDA).  
