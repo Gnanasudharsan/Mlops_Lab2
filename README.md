@@ -139,7 +139,7 @@ curl -X POST http://localhost:8000/predict   -H "Content-Type: application/json"
 ## Screenshots
 
 ### Streamlit Dashboard
-![dashboard](assets/dashboard.png)
+![dashboard](assets/wine_dashboard_overview.png
 
 ### FastAPI Docs
 Visit [http://localhost:8000/docs](http://localhost:8000/docs) to explore the OpenAPI docs.
