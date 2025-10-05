@@ -1,1 +1,153 @@
+<<<<<<< HEAD
 # Mlops_Lab2
+=======
+# MLOps Lab 2 – FastAPI + Streamlit
+
+This lab demonstrates how to serve a machine learning model with **FastAPI** and build an interactive **Streamlit** dashboard for predictions and exploratory data analysis (EDA).  
+The project covers:
+
+- Hosting ML models with FastAPI (Iris & Wine Quality datasets)  
+- Adding API key authentication for secure access  
+- Integrating Streamlit as a frontend dashboard  
+- Supporting CSV/JSON uploads for batch predictions  
+- Visualizing results with Plotly  
+
+---
+
+## Project Structure
+
+```
+Mlops_Lab2/
+│── api/
+│   └── main.py          # FastAPI backend (ML inference service)
+│── src/
+│   └── Dashboard.py     # Streamlit frontend (UI + EDA + predictions)
+│── data/
+│   └── winequality-red.csv   # Wine Quality dataset (semicolon separated)
+│── requirements.txt
+│── README.md
+│── .streamlit/
+│    └── secrets.toml    # API key and backend URL config
+```
+
+---
+
+## Setup Instructions
+
+### 1. Clone repository
+```bash
+git clone https://github.com/Gnanasudharsan/Mlops_Lab2.git
+cd Mlops_Lab2
+```
+
+### 2. Create virtual environment
+```bash
+python3 -m venv streamlitenv
+source ./streamlitenv/bin/activate   # Mac/Linux
+# or
+.\streamlitenv\Scriptsctivate      # Windows
+```
+
+### 3. Install dependencies
+```bash
+pip install -r requirements.txt
+```
+
+Or minimal install:
+```bash
+pip install streamlit fastapi uvicorn scikit-learn plotly pandas
+```
+
+---
+
+## Configuration
+
+### API Key
+For security, the FastAPI backend requires an API key.
+
+**Option A – Environment Variable**
+```bash
+export API_KEY="your_api_key_here"
+```
+
+**Option B – Streamlit Cloud (recommended)**  
+Create `.streamlit/secrets.toml` file in your repo:
+
+```toml
+API_URL="http://localhost:8000"
+API_KEY="your_api_key_here"
+```
+
+---
+
+## Running the App
+
+### 1. Start FastAPI backend
+```bash
+cd Mlops_Lab2
+source ./streamlitenv/bin/activate
+export API_KEY="your_api_key_here"
+export ML_WINE_PATH="data/winequality-red.csv"
+uvicorn api.main:app --reload --port 8000
+```
+Backend will be available at [http://localhost:8000](http://localhost:8000).
+
+Health check:
+```bash
+curl -H "x-api-key: your_api_key_here" http://localhost:8000/health
+```
+
+---
+
+### 2. Start Streamlit frontend
+In a second terminal:
+```bash
+cd Mlops_Lab2
+source ./streamlitenv/bin/activate
+streamlit run src/Dashboard.py
+```
+Frontend will be available at [http://localhost:8501](http://localhost:8501).
+
+---
+
+## Features
+
+✅ API key authentication  
+✅ Choose dataset (Iris / Wine Quality)  
+✅ Manual input via sliders  
+✅ Upload CSV/JSON for batch predictions  
+✅ Download results as CSV  
+✅ Plotly charts for scatterplots, histograms, feature importances  
+✅ Health check status badge  
+
+---
+
+## Example Prediction Request
+
+```bash
+curl -X POST http://localhost:8000/predict   -H "Content-Type: application/json"   -H "x-api-key: your_api_key_here"   -d '{
+    "dataset": "iris",
+    "rows": [
+      {"sepal_length": 5.1, "sepal_width": 3.5, "petal_length": 1.4, "petal_width": 0.2}
+    ],
+    "hyper": {"n_estimators": 200, "max_depth": 8, "test_size": 0.2}
+  }'
+```
+
+---
+
+## Screenshots
+
+### Streamlit Dashboard
+![dashboard](assets/dashboard.png)
+
+### FastAPI Docs
+Visit [http://localhost:8000/docs](http://localhost:8000/docs) to explore the OpenAPI docs.
+
+---
+
+## References
+- [FastAPI Docs](https://fastapi.tiangolo.com/)  
+- [Streamlit Docs](https://docs.streamlit.io/)  
+- [Scikit-learn](https://scikit-learn.org/)  
+>>>>>>> 147352a (Initial commit: Streamlit + FastAPI Lab project)
