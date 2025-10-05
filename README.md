@@ -92,32 +92,6 @@ Frontend will be available at [http://localhost:8501](http://localhost:8501).
 
 ---
 
-## Features
-
-✅ API key authentication  
-✅ Choose dataset (Iris / Wine Quality)  
-✅ Manual input via sliders  
-✅ Upload CSV/JSON for batch predictions  
-✅ Download results as CSV  
-✅ Plotly charts for scatterplots, histograms, feature importances  
-✅ Health check status badge  
-
----
-
-## Example Prediction Request
-
-```bash
-curl -X POST http://localhost:8000/predict   -H "Content-Type: application/json"   -H "x-api-key: your_api_key_here"   -d '{
-    "dataset": "iris",
-    "rows": [
-      {"sepal_length": 5.1, "sepal_width": 3.5, "petal_length": 1.4, "petal_width": 0.2}
-    ],
-    "hyper": {"n_estimators": 200, "max_depth": 8, "test_size": 0.2}
-  }'
-```
-
----
-
 ## Screenshots
 
 ### Streamlit Dashboard
@@ -132,4 +106,3 @@ Visit [http://localhost:8000/docs](http://localhost:8000/docs) to explore the Op
 - [FastAPI Docs](https://fastapi.tiangolo.com/)  
 - [Streamlit Docs](https://docs.streamlit.io/)  
 - [Scikit-learn](https://scikit-learn.org/)  
->>>>>>> 147352a (Initial commit: Streamlit + FastAPI Lab project)
